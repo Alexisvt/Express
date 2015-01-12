@@ -1,0 +1,28 @@
+extends layouts/layout
+block title
+  | Request Group Rate
+append content
+  h1
+    block title
+  div
+    form
+      input(type="hidden", name ="referrer")
+      p
+        | Name:
+        input(type="text", name ="name", id="fieldName")
+      p
+        | Group size:
+        input(type="text", name ="groupSize")
+      p
+        | Email:
+        input(type="email", name ="email")
+      p
+        input(type="submit", value="Submit")
+  script
+    :coffee
+      $(document).ready ->
+        $('input[name="referrer"]').val document.referrer
+        return
+      return
+      
+          

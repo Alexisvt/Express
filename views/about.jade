@@ -1,0 +1,23 @@
+extends layouts/layout
+block title
+  | The About Page
+if showTests
+  append stylesheets
+    link(rel="stylesheet", href="/vendor/mocha.css")
+  append scripts
+    script(src="//code.jquery.com/jquery-2.0.2.min.js")
+append content
+  h1
+    | The about page made with jade enginee
+  div
+    p #{fortune}
+  if showTests
+    div
+      p The showTests variable is true!, Time to some testign >:D
+      #mocha
+      script(src="/vendor/mocha.js")
+      script(src="/vendor/chai.js")
+      script(src="/qa/tests-about.js")
+      if pageTestScript
+        script(src="pageTestScript")
+      

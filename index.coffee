@@ -28,6 +28,16 @@ app.get '/about',(req, res)->
   res.render 'about', {fortune : fortune.getFortune()}
   return
 
+# Route that show the header information from the browser and client
+app.get '/headers', (req, res) ->
+  res.set 'Content-Type', 'text/plain'
+  s = ''
+  for key, value of req.headers
+    s += "#{key}: #{value}" + '\n'
+  res.send s
+  return
+
+# TODO - We need to add the test views and configuring the routes
 # the use of 'use' is for creating the middlewares
 
 #The  static middleware allows you to designate one or more directories as containing

@@ -6,12 +6,13 @@ module.exports = (grunt)->
     pkg: grunt.file.readJSON 'package.json'
 
     coffee:
-      dist:
-        files:
-          'public/qa/tests-about.js' : 'public/qa/tests-about.coffee'
-          'public/qa/tests-crosspage.js' : 'public/qa/tests-crosspage.coffee'
-          'public/qa/tests-global.js' : 'public/qa/tests-global.coffee'
-          
+      expand: true
+      flatten: true
+      cwd: 'public/qa/'
+      src: ['*.coffee']
+      dest: 'public/qa/'
+      ext: '.js'
+
     open:
       all:
         path: 'http://localhost:' + port

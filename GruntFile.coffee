@@ -8,7 +8,10 @@ module.exports = (grunt)->
     coffee:
       dist:
         files:
-          'index.js' : 'index.coffee'
+          'public/qa/tests-about.js' : 'public/qa/tests-about.coffee'
+          'public/qa/tests-crosspage.js' : 'public/qa/tests-crosspage.coffee'
+          'public/qa/tests-global.js' : 'public/qa/tests-global.coffee'
+          
     open:
       all:
         path: 'http://localhost:' + port
@@ -29,8 +32,8 @@ module.exports = (grunt)->
   ]
 
   grunt.registerTask 'serve', [
+    'open'
     'exec:openServer'
-    'open:all'
   ]
   return
 return

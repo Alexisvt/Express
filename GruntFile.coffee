@@ -15,7 +15,7 @@ module.exports = (grunt)->
 
     open:
       all:
-        path: 'http://localhost:' + port
+        path: "http://localhost:#{port}"
 
     exec:
       openServer:

@@ -14,12 +14,30 @@ app.set 'view engine', 'jade'
 #We set the port
 app.set 'port', process.env.PORT || 3000
 
+# Enable template caching
+app.set 'view cache', true
+
+################### Middlewares Section  ###############
+app.use require('body-parser')()
+
 app.use (req,res,next) ->
   res.locals.showTests = if app.get('env') isnt 'production' and req.query.test is '1' then true else false
   next()
   return
 
-#routing to / page
+################### routing to / page  #################
+app.get '/newsletter',(req,res)->
+  res.render 'newsletter',{csrf : 'CSRF token goes here'}
+  return
+
+app.post '/process', (req,res)->
+  console.log "Form (from querystring): #{req.query.form}"
+  console.log "CSRF token (from hidden form field): #{req.body._csrf}"
+  console.log "Name (from visible form field): #{req.body.name}"
+  console.log "Email (from visible form field): #{req.body.email}"
+  res.redirect 303,"/thank-you"
+  return
+
 app.get '/',(req, res)->
   res.render 'home'
 

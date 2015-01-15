@@ -36,3 +36,8 @@ append scripts
           evt.preventDefault()
           action = $(this).attr 'action'
           $container = $(this).closest '.formContainer'
+          $.ajax
+            url: action
+            type: 'POST'
+            success: (data)->
+              

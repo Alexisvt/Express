@@ -31,9 +31,17 @@ app.use bodyParser.json()
 app.use bodyParser.urlencoded(extended : true)
 
 app.use (req,res,next) ->
-  res.locals.showTests = if app.get('env') isnt 'production' and req.query.test is '1' then true else false
+  if app.get('env') isnt 'production' and req.query.test is '1'
+    res.locals.showTests = true
+  else
+    res.locals.showTests = false
   next()
   return
+###
+Esta es otra manera de hacerlo
+res.locals.showTests = if app.get('env') isnt 'production'
+and req.query.test is '1' then true else false
+###
 
 ################### routing to / page  #################
 

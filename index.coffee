@@ -5,6 +5,8 @@ express = require 'express'
 # look for the module in the node_modules directory
 fortune = require './lib/fortune.coffee'
 
+bodyParser = require 'body-parser'
+
 app= express()
 
 #We define the view folder and the view engine, in this case JADE and the views folder
@@ -18,7 +20,9 @@ app.set 'port', process.env.PORT || 3000
 app.set 'view cache', true
 
 ################### Middlewares Section  ###############
-app.use require('body-parser')()
+app.use (bodyParser.json())
+
+app.use bodyParser.urlencoded(extended : true)
 
 app.use (req,res,next) ->
   res.locals.showTests = if app.get('env') isnt 'production' and req.query.test is '1' then true else false

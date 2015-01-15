@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '/' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 warn package.json Express@1.0.0 No description
+6 warn package.json Express@1.0.0 No repository field.
+7 warn package.json Express@1.0.0 No README data
+8 verbose readDependencies using package.json deps
+9 verbose cache add [ '/', null ]
+10 verbose cache add name=undefined spec="/" args=["/",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: '/',
+11 verbose parsed url   path: '/',
+11 verbose parsed url   href: '/' }
+12 silly lockFile 42099b4a- /
+13 verbose lock / C:\Users\Alexis\AppData\Roaming\npm-cache\42099b4a-.lock
+14 silly lockFile 42099b4a- /
+15 silly lockFile 42099b4a- /
+16 error addLocal Could not install /
+17 error Error: ENOENT, open 'C:\package.json'
+18 error If you need help, you may report this *entire* log,
+18 error including the npm and node versions, at:
+18 error     <http://github.com/npm/npm/issues>
+19 error System Windows_NT 6.1.7601
+20 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "/"
+21 error cwd C:\Users\Alexis\Documents\LearningCenter\Express
+22 error node -v v0.10.32
+23 error npm -v 1.4.28
+24 error path C:\package.json
+25 error code ENOENT
+26 error errno 34
+27 verbose exit [ 34, true ]

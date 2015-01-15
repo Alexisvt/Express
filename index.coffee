@@ -20,7 +20,7 @@ app.set 'port', process.env.PORT || 3000
 app.set 'view cache', true
 
 ################### Middlewares Section  ###############
-app.use (bodyParser.json())
+app.use bodyParser.json()
 
 app.use bodyParser.urlencoded(extended : true)
 

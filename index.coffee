@@ -9,6 +9,7 @@ look for the module in the node_modules directory
 fortune = require './lib/fortune.coffee'
 formidable = require 'formidable'
 bodyParser = require 'body-parser'
+credentials = require './lib/credentials.coffee'
 
 app= express()
 

@@ -1,1 +1,1 @@
-module.exports = cookieSecret : 'your cookie secret goes here'
+module.exports = cookieSecret : 'a35741'

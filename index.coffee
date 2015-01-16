@@ -27,6 +27,9 @@ app.set 'port', process.env.PORT || 3000
 app.set 'view cache', true
 
 ################### Middlewares Section  ###############
+
+app.use require('cookie-parser')(credentials.cookieSecret)
+
 app.use bodyParser.json()
 
 app.use bodyParser.urlencoded(extended : true)
@@ -45,6 +48,11 @@ and req.query.test is '1' then true else false
 ###
 
 ################### routing to / page  #################
+
+# Cookie routing
+app.get '/cookie-test', (req,res) ->
+  res.cookie 'monster', 'monster data value'
+  res.cookie 'signed_monster', 'signed_monster data', signed : true
 
 # Routing for uploading images
 app.get '/contest/vacation-photo', (req,res) ->
@@ -138,7 +146,7 @@ app.use (err,req,res,next)->
   res.send '500 - Server Error'
   return
 
-app.listen(app.get('port'), ->
+app.listen app.get('port'), ->
   console.log "Express started on http://localhost:#{app.get('port')}
   ; press Ctrl-C to terminate."
-  return)
+  return

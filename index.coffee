@@ -192,7 +192,6 @@ app.use (req, res)->
   res.type 'text/plain'
   res.status 404
   res.send '404 - Not Found'
-  return
 
 # custom 500 page
 app.use (err,req,res,next)->
@@ -200,9 +199,7 @@ app.use (err,req,res,next)->
   res.type 'text/plain'
   res.status 500
   res.send '500 - Server Error'
-  return
 
 app.listen app.get('port'), ->
   console.log "Express started on http://localhost:#{app.get('port')}
   ; press Ctrl-C to terminate."
-  return

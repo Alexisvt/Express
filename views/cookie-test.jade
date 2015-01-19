@@ -5,4 +5,7 @@ block title
 
 block content
   div
-    p some text, you need to verify if there are a cookie with the name of #{cookieName}
+    if(monster.length != 0)
+      p The value of the Monster Cookie is #{monster}
+    else
+      p The cookie is not set yet
